@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title></title>
+  
+  
+  
+  <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+  
+  <!-- Extra Codiqa features -->
+  <link rel="stylesheet" href="codiqa.ext.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+  <script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+  <!-- Extra Codiqa features -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/codiqa.ext.js"></script>
+   
+</head>
+<body>
+<!-- Home -->
+<div data-role="page" id="page1">
+    <div data-theme="a" data-role="header" data-position="fixed">
+        <h1 id="cabecera">
+            Starbucks Coffe Company
+        </h1>
+    </div>
+	
+	<p><a href="#popup" data-role="button" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
+	
+    <div data-role="content">
+        <a href="#page1">
+            <div style=" text-align:center">
+                <img style="width: 50%; height: 50%" src="data:image/jpeg;base64,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">
+            </div>
+        </a>
+        <a data-role="button" href="#cafe" data-icon="star" data-iconpos="left">
+            Café
+        </a>
+        <a data-role="button" href="#carta" data-icon="star" data-iconpos="left">
+            Carta
+        </a>
+        <a data-role="button" href="#tienda" data-icon="star" data-iconpos="left">
+            Tienda
+        </a>
+        <a data-role="button" href="#popup" data-icon="star" data-iconpos="left" data-rel="dialog" data-transition="pop">
+            Responsabilidad
+        </a>
+        <a data-role="button" href="#popup" data-icon="info" data-iconpos="left" data-rel="dialog" data-transition="pop">
+            Acerca de Starbucks
+        </a>
+    </div>
+    <div data-theme="a" data-role="footer">
+        <h3>
+            Copyright
+        </h3>
+    </div>
+</div>
+<div data-role="page" id="cafe">
+    <div data-theme="a" data-role="header">
+		<a data-role="button" href="#page1" class="ui-btn-right">
+            Volver
+        </a>
+        <h3>
+            Café
+        </h3>
+    </div>
+    <div data-role="content">
+        <h4>
+            ¿Cómo te gusta el café?
+        </h4>
+        <div data-role="collapsible-set" data-theme="a">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>
+                    Sutil y meloso
+                </h3>
+                <div style="display: inline">
+                    <img style="width: 25%; height: 25%" src="http://globalassets.starbucks.com/assets/c681af7d0c6541b1935e0313ddd7a387.png">
+                </div>
+                <h5>
+                    Los cafés de tostado suave Starbucks® despiertan los sentidos con ligereza.
+                    Son sutiles y suaves, con una leve acidez. El café que se elabora con este
+                    tipo de tostado resulta ligero, aunque con un sabor definido.
+                </h5>
+            </div>
+            <div data-role="collapsible">
+                <h3>
+                    Suave y equilibrado
+                </h3>
+                <div style="display: inline">
+                    <img style="width: 25%; height: 25%" src="http://globalassets.starbucks.com/assets/89ae507c7df245f2a3780446498b1a00.png">
+                </div>
+                <h5>
+                    Nuestros cafés de tostado medio son perfectos para paladares que buscan
+                    sabores intermedios: ni demasiado suaves ni demasiado fuertes. Un café
+                    Starbucks® de tostado medio, aromático y equilibrado, es agradable a cualquier
+                    hora del día, nos recuerda que todo va bien tal y como está.
+                </h5>
+            </div>
+            <div data-role="collapsible">
+                <h3>
+                    Energico e intenso
+                </h3>
+                <div style="display: inline">
+                    <img style="width: 25%; height: 25%" src="http://globalassets.starbucks.com/assets/daa4d210aac344f694c69c7ef17c5a04.png">
+                </div>
+                <h5>
+                    Los cafés Starbucks® de tostado intenso y cuerpo más denso presentan sabores
+                    dulces e intensos, resultando magnánimos al paladar, con sólo un punto
+                    de acidez. Cada taza contiene el cuerpo y la acidez idónea para cautivar
+                    todos los sentidos hasta el último sorbo.
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div data-theme="a" data-role="footer">
+        <h3>
+            Copyright
+        </h3>
+    </div>
+</div>
+<div data-role="page" id="tienda">
+    <div data-theme="a" data-role="header">
+		<a data-role="button" href="#page1" class="ui-btn-right">
+            Volver
+        </a>        
+		<h3>
+            Tienda
+        </h3>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Café
+            </li>
+            <li data-theme="">
+                <a href="#page1" data-transition="slide">
+                    Starbucks Reserve® Jamaica Blue Mountain® Amber Estate
+                    <span class="ui-li-count">
+                        8.30€
+                    </span>
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Verismo™ Espresso Roast Espresso Pods
+                    <span class="ui-li-count">
+                        6.85€
+                    </span>
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Starbucks® Gold Coast® Blend
+                    <span class="ui-li-count">
+                        10.2€
+                    </span>
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Starbucks Reserve® Hawaii Ka'u Coffee
+                    <span class="ui-li-count">
+                        7.20€
+                    </span>
+                </a>
+            </li>
+            <li data-role="list-divider" role="heading">
+                Té
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Tazo® Chocolate Chai Tea Latte Concentrate
+                    <span class="ui-li-count">
+                        5.95€
+                    </span>
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Tazo® Decaf Chai Filterbag Tea
+                    <span class="ui-li-count">
+                        4.95€
+                    </span>
+                </a>
+            </li>
+            <li data-role="list-divider" role="heading">
+                Accesorios
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Starbucks® Modern Classic Mug, 12 fl oz
+                    <span class="ui-li-count">
+                        4.95€
+                    </span>
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Starbucks® Stainless Steel &amp; Ceramic Tumbler, 12 fl oz
+                    <span class="ui-li-count">
+                        9.90€
+                    </span>
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Starbucks® Cold Cup, 24 fl oz
+                    <span class="ui-li-count">
+                        8.95€
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-theme="a" data-role="footer">
+        <h3>
+            Copyright
+        </h3>
+    </div>
+</div>
+<div data-role="page" id="carta">
+    <div data-theme="a" data-role="header">
+		<a data-role="button" href="#page1" class="ui-btn-right">
+            Volver
+        </a>        
+		<h3>
+            Carta
+        </h3>
+    </div>
+    <div data-role="content">
+        <h4>
+            Nuestras bebidas
+        </h4>
+        <div data-role="collapsible-set" data-theme="a">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>
+                    Espresso
+                </h3>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div style="display: inline text-align:center">
+                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/b6070082ad134880bb634534b96852a9.jpg">
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <h5>
+                            Espresso
+                        </h5>
+                    </div>
+                    <div class="ui-block-a">
+                        <h5>
+                            Espresso Macchiato
+                        </h5>
+                    </div>
+                    <div class="ui-block-b">
+                        <div style="display: inline text-align:center">
+                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/0c9d22990f27420fb6d87f4dc0e45d1c.jpg">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div style="display: inline text-align:center">
+                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/d01fdcb3707c4c98ac575e89f3293b38.jpg">
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <h5>
+                            Espresso con Panna
+                        </h5>
+                    </div>
+                    <div class="ui-block-a">
+                        <h5>
+                            Caramel Macchiato
+                        </h5>
+                    </div>
+                    <div class="ui-block-b">
+                        <div style="display: inline text-align:center">
+                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/b7d9d46cdcda44ec9f4b38709a957bab.jpg">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div style="display: inline text-align:center">
+                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/2237ef1d9dab486695b8e6269d41ab0a.jpg">
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <h5>
+                            Cappuccino
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible">
+                <h3>
+                    Frappuccino
+                </h3>
+                <div class="ui-grid-a">
+				                    <div class="ui-block-a">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/954e8b7ff42d4b0caed573f9bf59313d.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <h5>
+				                            Café Frappuccino®
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-a">
+				                        <h5>
+				                            Mocha Frappuccino®
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/de4bbda9049a43bc9a75a96ad3e155e4.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-a">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/2fd8d8b97770414fbbcbd6ffe7371e83.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <h5>
+				                            Caramelo Frappuccino®
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-a">
+				                        <h5>
+				                            Vainilla Frappuccino®
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/f53094896a6e47e4af7bd43663b72d96.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-a">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/a0ddb4cf76424fe2a1667135b9b38c35.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <h5>
+				                            Chocolate Frappuccino®
+				                        </h5>
+				                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible">
+                <h3>
+                    Smoothies
+                </h3>
+                <div class="ui-grid-a">
+				                    <div class="ui-block-a">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/72daa0ab988046d4b2853b0d649a9d4f.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <h5>
+				                            Frambuesa y Frutos del Bosque Frappuccino®
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-a">
+				                        <h5>
+				                            Mango y Fruta de la Pasión Frappuccino®
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/af1c7d2e38474f8396cc73ebad1a1692.jpg">
+				                        </div>
+				                    </div>
+
+                </div>
+            </div>
+            <div data-role="collapsible">
+                <h3>
+                    Teas
+                </h3>
+                <div class="ui-grid-a">
+				                    <div class="ui-block-a">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/3c30ef71bb714e429dbd2f0a47b30b2b.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <h5>
+				                            Jasmine Orange
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-a">
+				                        <h5>
+				                            Speermint Green
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/c1b4ed49f8e8410296555945fb1f78b1.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-a">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/8c39faefcc1f405f807f3baf5e7b19c7.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <h5>
+				                            Earl Grey
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-a">
+				                        <h5>
+				                            Chai
+				                        </h5>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/44b40397d47c4c7f9621947c6768b952.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-a">
+				                        <div style="display: inline text-align:center">
+				                            <img style="width: 50%; height: 50%" src="http://globalassets.starbucks.com/assets/a5ebb895453b47f99340a4d45401c48d.jpg">
+				                        </div>
+				                    </div>
+				                    <div class="ui-block-b">
+				                        <h5>
+				                            Vainilla Rooibos
+				                        </h5>
+				                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-theme="a" data-role="footer">
+        <h3>
+            Copyright
+        </h3>
+    </div>
+</div><!-- Start of third page: #popup -->
+<div data-role="popup" id="popup">
+
+	<div data-role="header" data-theme="e">
+		<h1>Mensaje PopUp</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+		<h2>Apartado No Implementado</h2>
+		<p>Este apartado no se encuentra implementado. El contenido estará disponible en posteriores versiones</p>		
+		<p><a href="#page1" data-rel="back" data-role="button" data-inline="true" data-icon="back">Volver al menu</a></p>
+	</div><!-- /content -->
+</div><!-- /page popup -->
+
+
+
+
+
+
+</body>
+</html>
